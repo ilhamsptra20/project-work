@@ -4,6 +4,7 @@ use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,9 @@ Auth::routes();
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth:admin')->name('admin');
 Route::get('/mahasiswa', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth:mahasiswa')->name('mahasiswa');
 Route::get('/dosen', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth:dosen')->name('dosen');
+
+// Route UPI //
+
+Route::resource('data_mahasiswa', MahasiswaController::class);
+
+//END Route UPI//
