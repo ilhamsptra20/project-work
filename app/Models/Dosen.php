@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class Dosen extends Authenticatable
 {
-    protected $table = 'admin';
+    protected $table = 'dosen';
     protected $primaryKey = 'nip';
 
     use HasApiTokens, HasFactory, Notifiable;
@@ -21,7 +21,10 @@ class Dosen extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'nip',
         'name',
+        'no_hp',
+        'alamat',
         'email',
         'password',
     ];

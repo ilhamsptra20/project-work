@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\RegistrasiController;
+use App\Http\Controllers\DosenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,9 @@ Route::get('/dosen', [App\Http\Controllers\HomeController::class, 'index'])->mid
 // Route UPI //
 
 Route::resource('data_mahasiswa', MahasiswaController::class);
+Route::resource('dosen', DosenController::class);
 Route::resource('registrasi', RegistrasiController::class);
 Route::get('registrasi/hapus/{id}', [RegistrasiController::class,'destroy']);
+Route::get('dosen/hapus/{nip}', [DosenController::class,'destroy']);
 
 //END Route UPI//

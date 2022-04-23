@@ -102,5 +102,5 @@
         <label for="pendidikan_orangtua">Pendidikan Orang Tua</label>
         <input type="text" name="pendidikan_orangtua" id="pendidikan_orangtua">
     </div>
-    <button type="submit">update</button>
+    <button type="submit">simpan</button>
 </form>

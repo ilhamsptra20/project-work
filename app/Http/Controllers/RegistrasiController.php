@@ -53,8 +53,30 @@ class RegistrasiController extends Controller
             'jurusan'=>'required|max:5',
             'no_ijazah'=>'required|max:13',
         ]);
-        Registrasi::create($request->all());
-        return redirect('registrasi');
+        $ceknohportu = Registrasi::where('no_hp_orangtua',$request->no_hp_orangtua)->count();
+        $ceknohp = Registrasi::where('no_hp',$request->no_hp)->count();
+        $cekemail = Registrasi::where('email',$request->email)->count();
+        $cekemailorangtua = Registrasi::where('email_orangtua',$request->email_orangtua)->count();
+        
+        if($ceknohp == 0){
+            if($cekemail == 0 ){
+                if($ceknohportu == 0){
+                    if($cekemailorangtua == 0){
+                        Registrasi::create($request->all());
+                        return redirect('registrasi');
+                    }else{
+                        return "email orang tua sudah terdaftar";
+                    }
+                }else{
+                    return "No Hp Orang Tua Sudah Terdaftar";
+                }
+            }else{
+                return "email sudah terdaftar";
+            }
+        }else{
+            return "No Hp sudah terdaftar";
+        }
+        
     }
 
     /**
@@ -105,8 +127,30 @@ class RegistrasiController extends Controller
             'jurusan'=>'required|max:5',
             'no_ijazah'=>'required|max:13',
         ]);
-        $registrasi->update($request->all());
-        return redirect('registrasi');
+        $ceknohportu = Registrasi::where('no_hp_orangtua',$request->no_hp_orangtua)->count();
+        $ceknohp = Registrasi::where('no_hp',$request->no_hp)->count();
+        $cekemail = Registrasi::where('email',$request->email)->count();
+        $cekemailorangtua = Registrasi::where('email_orangtua',$request->email_orangtua)->count();
+        
+        if($ceknohp == 0){
+            if($cekemail == 0 ){
+                if($ceknohportu == 0){
+                    if($cekemailorangtua == 0){
+                        $registrasi->update($request->all());
+                        return redirect('registrasi');
+                    }else{
+                        return "email orang tua sudah terdaftar";
+                    }
+                }else{
+                    return "No Hp Orang Tua Sudah Terdaftar";
+                }
+            }else{
+                return "email sudah terdaftar";
+            }
+        }else{
+            return "No Hp sudah terdaftar";
+        }
+        
     }
 
     /**
