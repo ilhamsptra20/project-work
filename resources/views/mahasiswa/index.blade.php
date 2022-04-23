@@ -9,7 +9,7 @@
         <td>Asal Sekolah</td>
         <td>Action</td>
     </tr>
-    @foreach($data as $data)
+    @foreach($mahasiswa as $data)
     <tr>
         <td>{{$data->nama}}</td>
         <td>{{$data->jk}}</td>
