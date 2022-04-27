@@ -8,6 +8,8 @@
             </ul>
         </div>
 @endif
+<a href="{{url('registrasi')}}"><- Back</a>
+
 <form action="{{route('dosen.store')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div>

@@ -103,24 +103,25 @@ class DosenController extends Controller
             'email'=>'required|email',
             'password'=>'required',
         ]);
-        $ceknip = Dosen::where('nip',$request->nip)->count();
-        $ceknohp = Dosen::where('no_hp',$request->no_hp)->count();
-        $cekemail = Dosen::where('email',$request->email)->count();
-        if($ceknip == 0){
-            if($ceknohp == 0){
-                if($cekemail == 0 ){
+        // $ceknip = Dosen::where('nip',$request->nip)->count();
+        // $ceknohp = Dosen::where('no_hp',$request->no_hp)->count();
+        // $cekemail = Dosen::where('email',$request->email)->count();
+        // if($ceknip == 0){
+        //     if($ceknohp == 0){
+        //         if($cekemail == 0 ){
 
-                    $dosen->update($request->all());
-                    return redirect('dosen');
-                }else{
-                    return "email sudah terdaftar";
-                }
-            }else{
-                return "Noph sudah terdaftar";
-            }
-        }else{
-            return "Data Sudah Ada";
-        }
+                   
+        //         }else{
+        //             return "email sudah terdaftar";
+        //         }
+        //     }else{
+        //         return "Noph sudah terdaftar";
+        //     }
+        // }else{
+        //     return "Data Sudah Ada";
+        // }
+        $dosen->update($request->all());
+        return redirect('dosen');
        
     }
 

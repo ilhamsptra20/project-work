@@ -32,7 +32,7 @@ class Registrasi extends Model
         'no_hp_orangtua',
         'email_orangtua',
         'pekerjaan_orangtua',
-        'nama-instansi_orangtua',
+        'nama_instansi_orangtua',
         'pendidikan_orangtua',
     ];
 

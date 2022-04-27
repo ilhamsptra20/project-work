@@ -8,6 +8,8 @@
             </ul>
         </div>
     @endif
+    <a href="{{url('registrasi')}}"><- Back</a>
+
 <form action="{{route('registrasi.update',$registrasi->id)}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
@@ -109,7 +111,7 @@
         <input type="text" name="pekerjaan_orangtua" id="pekerjaan_orangtua" value="{{$registrasi->pekerjaan_orangtua}}">
     </div>
     <div>
-        <label for="nama-instansi_orangtua">Nama Instansi Orang Tua</label>
+        <label for="nama_instansi_orangtua">Nama Instansi Orang Tua</label>
         <input type="text" name="nama_instansi_orangtua" id="nama-instansi_orangtua" value="{{$registrasi->nama_instansi_orangtua}}">
     </div>
     <div>

@@ -1,3 +1,5 @@
+<a href="{{url('registrasi')}}"><- Back</a>
+
 <table>
     <tr>
         <td>Nama</td>
